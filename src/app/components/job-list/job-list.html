@@ -1,0 +1,70 @@
+<div class="alert alert-success shadow-sm mb-3">
+  <h5 class="mb-2">🎯 Purpose of this Application</h5>
+  <p class="mb-1">
+    This Job Tracker application helps users manage and track their job applications efficiently.
+  </p>
+  <ul class="mb-0">
+    <li>📌 Keep all job applications in one place</li>
+    <li>📌 Track application status (Applied, Interview, Selected, Rejected)</li>
+    <li>📌 Avoid forgetting applied companies</li>
+    <li>📌 Stay organized during job search</li>
+    <li>📌 Improve job tracking and decision making</li>
+  </ul>
+</div>
+<!-- ✅ USER GUIDELINES -->
+<div class="alert alert-primary shadow-sm">
+  <h5 class="mb-2">📌 How to use this app:</h5>
+  <ul class="mb-0">
+    <li>👉 Click <b>Add Job</b> to add a job</li>
+    <li>👉 Fill Company, Role, Status</li>
+    <li>👉 View jobs here</li>
+    <li>👉 Use filter to sort jobs</li>
+    <li>👉 Delete jobs if needed</li>
+  </ul>
+</div>
+
+<h2 class="mb-3">📋 Job Applications</h2>
+
+<!-- ✅ FILTER -->
+<div class="mb-3">
+  <select [(ngModel)]="selectedFilter" (change)="filterJobs()" class="form-control w-25">
+    <option value="">All Jobs</option>
+    <option value="Applied">Applied</option>
+    <option value="Interview">Interview</option>
+    <option value="Selected">Selected</option>
+    <option value="Rejected">Rejected</option>
+  </select>
+</div>
+
+<!-- ✅ EMPTY MESSAGE -->
+<div *ngIf="filteredJobs.length === 0" class="text-center mt-4">
+  <h5>No jobs found 😕</h5>
+</div>
+
+<!-- ✅ JOB CARDS -->
+<div class="row">
+  <div class="col-md-4 mb-4" *ngFor="let job of filteredJobs; let i = index">
+    <div class="card shadow-lg border-0 p-3">
+
+      <h5 class="fw-bold text-primary">{{ job.company }}</h5>
+      <p><strong>Role:</strong> {{ job.role }}</p>
+
+      <span 
+        class="badge"
+        [ngClass]="{
+          'bg-success': job.status === 'Selected',
+          'bg-warning': job.status === 'Interview',
+          'bg-primary': job.status === 'Applied',
+          'bg-danger': job.status === 'Rejected'
+        }"
+      >
+        {{ job.status }}
+      </span>
+
+      <button (click)="deleteJob(i)" class="btn btn-danger btn-sm mt-3">
+        🗑 Delete
+      </button>
+
+    </div>
+  </div>
+</div>
