@@ -1,0 +1,57 @@
+<div class="d-flex justify-content-center align-items-center vh-100" style="background:#f4f6f9;">
+  
+  <div class="card shadow-lg p-4" style="width:350px; border-radius:15px;">
+    
+    <h3 class="text-center mb-3 fw-bold">🔐 Welcome</h3>
+    <p class="text-center text-muted mb-4">Login to your account</p>
+
+    <!-- EMAIL -->
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input 
+        [(ngModel)]="email" 
+        type="email" 
+        placeholder="Enter Email" 
+        class="form-control"
+      >
+    </div>
+
+    <!-- PASSWORD -->
+    <div class="mb-3 position-relative">
+      <label class="form-label">Password</label>
+
+      <input 
+        [(ngModel)]="password" 
+        [type]="showPassword ? 'text' : 'password'" 
+        placeholder="Enter Password" 
+        class="form-control pe-5"
+      >
+
+      <!-- 👁 ICON -->
+      <i 
+        class="bi" 
+        [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'"
+        (click)="togglePassword()"
+        style="position:absolute; right:12px; top:38px; cursor:pointer; font-size:18px;"
+      ></i>
+    </div>
+
+    <!-- PASSWORD RULE -->
+    <small class="text-danger">
+      Password must contain at least 1 uppercase, 1 lowercase and 1 special character
+    </small>
+
+    <!-- LOGIN BUTTON -->
+    <button (click)="login()" class="btn btn-primary w-100 mt-3">
+      Login
+    </button>
+
+    <!-- FORGOT PASSWORD -->
+    <div class="text-center mt-3">
+      <a (click)="forgotPassword()" style="cursor:pointer; color:#0d6efd;">
+        Forgot Password?
+      </a>
+    </div>
+
+  </div>
+</div>

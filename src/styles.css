@@ -1,80 +1,13 @@
-/* 🌐 GLOBAL BODY */
 body {
   background: #f5f7fa;
   font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 0;
 }
 
-/* 🧱 NAVBAR */
-.navbar {
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-/* 🪟 CARD DESIGN */
 .card {
-  border-radius: 12px;
-  transition: all 0.3s ease-in-out;
-  border: none;
+  border-radius: 15px;
+  transition: 0.3s;
 }
 
-/* ✨ CARD HOVER EFFECT */
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-}
-
-/* 📝 HEADINGS */
-h2, h3, h5 {
-  font-weight: 600;
-}
-
-/* 🔘 BUTTONS */
-.btn {
-  border-radius: 8px;
-  transition: 0.2s;
-}
-
-.btn:hover {
-  opacity: 0.9;
-}
-
-/* 📌 ALERT BOXES */
-.alert {
-  border-radius: 10px;
-}
-
-/* 📋 TABLE (if used) */
-.table {
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-/* 🧾 FORM INPUTS */
-.form-control {
-  border-radius: 8px;
-  padding: 10px;
-}
-
-/* 📊 BADGES */
-.badge {
-  font-size: 0.9rem;
-  padding: 6px 10px;
-  border-radius: 8px;
-}
-
-/* 📱 RESPONSIVE SPACING */
-.container {
-  margin-top: 20px;
-}
-
-/* 🎯 EMPTY STATE TEXT */
-.text-center h5 {
-  color: #6c757d;
-}
-
-/* 💡 SMALL ANIMATION */
-* {
-  transition: all 0.2s ease-in-out;
 }
